@@ -1,5 +1,5 @@
 #include "board.h"
- void Board(char* ptr[], int n, int m) 
+ void Board(char* ptr[], int n, int m)
 {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
