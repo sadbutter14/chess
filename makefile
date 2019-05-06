@@ -25,16 +25,16 @@ build/board.o: src/board.cpp src/board.h
 	$(OBJ)
 
 build/test.o: test/test.c
-	gcc -Wall -std=c99 -c test/test.c -o build/test.o -Ithirdparty -Isrc
+	gcc -Wall -Werror -std=c99 -c test/test.c -o build/test.o -Ithirdparty -Isrc
 
 bin/test: build/test.o
 	g++ -Wall -Werror -std=c++11 build/test.o -o bin/test
 
 build/first_test.o: test/first_test.c
-	gcc -Wall -std=c99 -c test/first_test.c -o build/first_test.o -Ithirdparty
+	gcc -Wall -Werror -std=c99 -c test/first_test.c -o build/first_test.o -Ithirdparty
 
 bin/test: build/test.o  build/first_test.o 
-	gcc -Wall -std=c99   build/test.o build/first_test.o -o bin/test
+	gcc -Wall -Werror -std=c99   build/test.o build/first_test.o -o bin/test
 
 clean:
 	rm build/*.o
