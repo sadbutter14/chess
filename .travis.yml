@@ -6,4 +6,3 @@ dist: xenial
 script:
   - git ls-files src/ test/ | xargs clang-format -i && ./bin/test && git diff --exit-code
   - make
-  - make bin/test
