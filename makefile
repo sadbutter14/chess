@@ -15,6 +15,9 @@ folder2:
 bin/chess.exe: build/main.o build/board_print_plain.o build/board.o 
 	g++ $(CFLAGS) $^ -o $@
 
+bin/tests.exe: build/test.o build/first_test.o
+	g++ $(CFLAGS) $^ -o $@
+
 build/main.o: src/main.cpp src/board.h 
 	$(OBJ)
 

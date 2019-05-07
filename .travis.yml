@@ -4,7 +4,6 @@ compiler: g++
 dist: xenial
 
 script:
-  - git ls-files src/ test/ | xargs clang-format -i && git diff --exit-code
+  - git ls-files src/ test/ | xargs clang-format -i && make bin/test && git diff --exit-code
   - make
   - make bin/test
-  - make bin/first_test
